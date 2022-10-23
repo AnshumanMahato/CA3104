@@ -10,7 +10,8 @@
 
 int main()
 {
-    int ch,num,i,err,dec;
+    int ch,num,i,err,dec,bin[32];
+    char hex[8];
     do{
         printf("\nNumber System Conversion\n");
         printf("\n1.Binary to Decimal");
@@ -69,7 +70,6 @@ int main()
             
             case 3: printf("\nEnter a decimal number:");
                     scanf("%d",&num);
-                    char hex[8];
                     i=0;
                     while(num){
                         int k = num%16;
@@ -90,7 +90,6 @@ int main()
                     break;
             case 4: printf("\nEnter a decimal number:");
                     scanf("%d",&num);
-                    int bin[32];
                     i=0;
                     while(num){
                         bin[i++] = num & 1;
@@ -100,7 +99,11 @@ int main()
                         printf("%d",bin[--i]);
                     }
                     break;
+            case 5: printf("\nExiting....\n");
+                    break;
+            default:printf("\nInvalid choice. Enter between 1-5.\n");
+                    break;
         }
-    }while(ch!=4);
+    }while(ch!=5);
     return 0;
 }
