@@ -69,7 +69,7 @@ int main()
             
             case 3: printf("\nEnter a decimal number:");
                     scanf("%d",&num);
-                    char hex[50];
+                    char hex[8];
                     i=0;
                     while(num){
                         int k = num%16;
