@@ -19,7 +19,7 @@ int main()
         printf("\n3.Decimal to Hexadecimal");
         printf("\n4.Decimal to Binary");
         printf("\n5.Exit");
-        printf("\n5.Enter Choice(1-5):");
+        printf("\nEnter Choice(1-5):");
         scanf("%d",&ch);
         switch(ch){
             case 1:printf("\nEnter a binary number:");
