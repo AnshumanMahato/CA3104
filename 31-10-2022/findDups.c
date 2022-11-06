@@ -5,58 +5,52 @@ int main()
     int size;
     printf("Enter the size of square the matrix: ");
     scanf("%d", &size);
-    int a[size][size];
+    int a[size * size];
     printf("\nEnter %d numbers:", size * size);
-    for (int i = 0; i < size; i++)
+    for (int i = 0; i < size * size; i++)
     {
-        for (int j = 0; j < size; j++)
-        {
-            scanf("%d", &a[i][j]);
-        }
+        scanf("%d", &a[i]);
     }
 
     printf("\nMatrix is\n");
-    for (int i = 0; i < size; i++)
+    for (int i = 0; i < size * size; i++)
     {
-        for (int j = 0; j < size; j++)
-        {
-            printf("%d ", a[i][j]);
-        }
-        printf("\n");
+        if (i % size == 0)
+            printf("\n");
+        printf("%d ", a[i]);
     }
 
     printf("\nDuplicate positions:\n");
     for (int i = size * size - 1; i >= 0; i--)
     {
-        if (*(*a + i) != 0)
+        if (a[i] != 0)
         {
-            printf("%d : ", *(*a+i));
-            int dup =0;
+            printf("%d : ", a[i]);
+            int dup = 0;
             for (int j = i - 1; j >= 0; j--)
             {
-                if (*(*a + i) == *(*a + j)){
-                    *(*a + j) = 0;
-                    printf("(%d,%d) ", j/size , j%size);
+                if (a[i] == a[j])
+                {
+                    a[j] = 0;
+                    printf("(%d,%d) ", j / size, j % size);
                     dup = 1;
                 }
             }
-            if(!dup)
+            if (!dup)
                 printf(" No Duplicates");
             printf("\n");
         }
     }
 
     printf("\nMatrix is\n");
-    for (int i = 0; i < size; i++)
+    for (int i = 0; i < size * size; i++)
     {
-        for (int j = 0; j < size; j++)
-        {
-            if(a[i][j])
-                printf("%d ", a[i][j]);
-            else
-                printf("  ");
-        }
-        printf("\n");
+        if (i % size == 0)
+            printf("\n");
+        if (a[i])
+            printf("%d ", a[i]);
+        else
+            printf("  ");
     }
 
     return 0;
