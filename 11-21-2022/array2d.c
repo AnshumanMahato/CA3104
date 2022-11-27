@@ -48,8 +48,16 @@ void deleteValue()
 void printArray()
 {
 	printf("\nArray is\n");
-	for (int i = 0; i < len; i++)
-		printf("%d ", *(arr + i));
+	for (int i = 0; i < r * c; i++)
+	{
+		if (i % c == 0)
+			printf("\n");
+		if (i < len)
+			printf("%d ", *(arr + i));
+		else
+			printf("- ");
+	}
+	printf("\n");
 }
 
 int main()
