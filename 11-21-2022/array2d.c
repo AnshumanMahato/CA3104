@@ -7,19 +7,20 @@ void insertValue()
 {
 	if (len == s)
 	{
-		printf("\nArray is full\n");
+		printf("\nMatrix is full\n");
 		return;
 	}
 	printf("\nEnter Value:");
-	scanf("%d", arr + len++);
+	scanf("%d", arr + len);
+	printf("\n%d pushed to Matrix\n", *(arr + len++));
 }
 
 void deleteValue()
 {
 	int i, val, val_exists = 0;
-	if (len == 0)
+	if (!len)
 	{
-		printf("\nArray is empty\n");
+		printf("\nMatrix is empty\n");
 		return;
 	}
 	printf("\nEnter Value to be deleted:");
@@ -42,12 +43,17 @@ void deleteValue()
 		len--;
 	}
 	else
-		printf("\n%d is not in array\n", val);
+		printf("\n%d is not in Matrix\n", val);
 }
 
 void printArray()
 {
-	printf("\nArray is\n");
+	if (!len)
+	{
+		printf("\nMatrix is empty\n");
+		return;
+	}
+	printf("\nMatrix is\n");
 	for (int i = 0; i < r * c; i++)
 	{
 		if (i % c == 0)
