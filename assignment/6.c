@@ -6,9 +6,9 @@ int main()
     gets(a);
     for (int i = 0; a[i] != '\0'; i++)
     {
-        if (a[i] >= 'A' && a[i] <= 'Z')
+        if (a[i] >= 'a' && a[i] <= 'z')
             a[i] -= 32;
     }
-    printf("Lowercase String: %s", a);
+    printf("Uppercase String: %s", a);
     return 0;
 }

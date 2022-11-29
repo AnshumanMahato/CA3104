@@ -12,20 +12,15 @@ int main()
 {
     struct stud stu;
     int i;
-    float avg = 0;
     for (i = 0; i < 50; i++)
     {
         printf("enter name of student : ");
-        fflush(stdin);
         gets(stu.name);
         printf("enter roll no of student : ");
-        fflush(stdin);
         scanf("%d", &stu.roll_no);
         printf("enter age of student : ");
-        fflush(stdin);
         scanf("%d", &stu.age);
         printf("enter marks of student : ");
-        fflush(stdin);
         scanf("%d", &stu.marks);
         printgradecard(stu);
         printf("\n");

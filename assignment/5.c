@@ -1,11 +1,11 @@
 
 #include <stdio.h>
-int gcd(int num1, int num2)
+int gcd(int a, int b)
 {
-    if (num1)
-        return gcd(num2 % num1, num1);
-    return num2;
-};
+    if (a)
+        return gcd(b % a, a);
+    return b;
+}
 int main()
 {
     int a, b;

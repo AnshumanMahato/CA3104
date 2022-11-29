@@ -10,7 +10,7 @@ int main()
 }
 int fact(int n)
 {
-    if (n == 1 || n == 0)
-        return 1;
-    return n * fact(n - 1);
+    if (n)
+        return n * fact(n - 1);
+    return 1;
 }
