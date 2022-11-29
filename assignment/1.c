@@ -9,17 +9,10 @@ int main()
     fflush(stdin);
     printf("enter string 2 ");
     scanf("%s", b);
-    fflush(stdin);
     for (i = 0; a[i] != '\0'; i++)
-    {
         c[i] = a[i];
-    }
-    for (j = 0; a[i] != '\0'; j++, i++)
-    {
-        if (b[j] == '\0')
-            break;
+    for (j = 0; b[j] != '\0'; j++, i++)
         c[i] = b[j];
-    }
     c[i] = '\0';
     printf("concatenated string :%s", c);
     return 0;
